@@ -29,7 +29,6 @@ static const char *const autostart[] = {
 	"flameshot", NULL,
 	"lxpolkit", NULL,
 	"dunst", NULL,
-    //"picom", NULL,
 	"compton", NULL,
 	//"sh", "-c", "$HOME/.config/suckless/dwm/scripts/status", NULL,
 	"sh", "-c", "$HOME/.config/suckless/dwm/scripts/dbus", NULL,
@@ -38,7 +37,7 @@ static const char *const autostart[] = {
 };
 
 /* tagging */
-static const char *tags[] = { "", "", "", "", "", "", "7", "8", "9" };
+static const char *tags[] = { "", "", "", "", "", "", "", "", "" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -120,8 +119,11 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
-	{ MODKEY,                       XK_c,      spawn,           SHCMD("wal")},
-	{ MODKEY|ControlMask,           XK_c,      spawn,           SHCMD("bmenu")},
+	{ MODKEY,                       XK_c,      spawn,          SHCMD("wal")},
+	{ MODKEY,                       XK_e,      spawn,          SHCMD("thunar")},
+	{ MODKEY|ControlMask,           XK_c,      spawn,          SHCMD("bmenu")},
+	{ MODKEY|ControlMask,           XK_z,      spawn,          SHCMD("quiter")},
+	{ MODKEY|ControlMask,           XK_b,      spawn,          SHCMD("louder")},
 	{ MODKEY|ControlMask|ShiftMask, XK_r,      spawn,          SHCMD("systemctl reboot")},
 	{ MODKEY|ControlMask|ShiftMask, XK_s,      spawn,          SHCMD("systemctl shutdown now")},
 };
